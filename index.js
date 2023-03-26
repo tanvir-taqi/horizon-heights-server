@@ -22,6 +22,9 @@ app.get('/', (req,res)=>{
 
 const uri = process.env.DB_ACCESS
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+console.log('====================================');
+console.log(uri);
+console.log('====================================');
 
 
 

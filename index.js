@@ -22,19 +22,7 @@ app.get('/', (req,res)=>{
 
 const uri = process.env.DB_ACCESS
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-//   const collection = client.db("horizoheights").collection("rooms");
- if(err){
-    console.log('====================================');
-    console.log("failed to connect to DB");
-    console.log('====================================');
- }else{
-    console.log('====================================');
-    console.log("db connection established");
-    console.log('====================================');
- }
 
-});
 
 
 // api endpoints
@@ -80,7 +68,7 @@ const run = async ()=>{
 
    }
 }
-run().then(err => console.log(err))
+run().catch(err => console.log(err))
 
 
 // Start the server
